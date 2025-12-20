@@ -34,3 +34,43 @@ function potencia(base, expoente = 2) { // expoente padrão é 2 caso não seja 
 }
 printText(`2 elevado ao quadrado é: ${potencia(2)}`);
 printText(`3 elevado ao cubo é: ${potencia(3, 3)}`);
+
+// Função callback - uma função passada como argumento para outra função
+function executarOperacao(a, b, operacao) { // operacao é uma função callback chamada dentro de executarOperacao exemplo: soma, multiplicacao.
+    return operacao(a, b);
+}
+const resultadoSoma = executarOperacao(7, 3, soma);
+printText(`Resultado da operação de soma: ${resultadoSoma}`);
+
+const resultadoMultiplicacao = executarOperacao(7, 3, multiplicacao);
+printText(`Resultado da operação de multiplicação: ${resultadoMultiplicacao}`);
+
+// ------------------------------------------------------------------------------------------
+
+// arrow function (função de seta) - sintaxe mais curta para escrever funções
+const saudacaoArrow = (nome) => {
+    console.log(`Olá, ${nome}! (via arrow function)`);
+}
+saudacaoArrow('Carlos');
+
+// Arrow function com retorno implícito
+const dividir = (a, b) => a / b;
+printText(`10 dividido por 2 é: ${dividir(10, 2)}`);
+
+// arrow function simplificada - sem parênteses para um único parâmetro
+const saudacaoSimples = nome => printText(`Oi, ${nome}! (via arrow function simplificada)`);
+saudacaoSimples('Caue');
+
+const calcularDobro = numero => numero * 2;
+printText(`O dobro de 8 é: ${calcularDobro(8)}`);
+
+// Guia de bolso:
+// this: Refere-se ao contexto onde a função é chamada.
+// Funções tradicionais: Possuem seu próprio valor de this, dependendo da forma como são chamadas.
+// Arrow Functions: Não têm seu próprio this; capturam o valor de this do contexto em que são declaradas.
+// Antes de Arrow Functions, usávamos .bind() para corrigir problemas com this.
+
+
+// -----------------------------------------------------------------------------------------------
+
+
