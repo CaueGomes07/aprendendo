@@ -44,4 +44,50 @@ setTimeout(() => {
 
 // ------------------------------------------------------------------------------------------
 
+// // Função global setInterval
+// // usada para executar uma função ou trecho de codigo repetidamente em intervalos de tempo especificados em milissegundos.
+// let contador = 0;
+// const intervalo = setInterval(() => {
+//     contador++;
+//     print(`Contador: ${contador}`);
+//     if (contador >= 5) {
+//         clearInterval(intervalo); // Para o intervalo após 5 execuções
+//         print('Contagem encerrada.');
+//     }
+// }, 1000); // Executa a cada 1 segundo
+// // Neste exemplo, a função dentro de setInterval é executada a cada segundo, incrementando o contador e exibindo seu valor. Quando o contador atinge 5, clearInterval é chamado para parar a execução repetida.
 
+// Perceba que no console as do settimeout e setInterval podem não aparecer na ordem exata devido à natureza assíncrona dessas funções.
+
+// Vamos comentar o exemplo acima para evitar confusão na saída do console.
+// Vamos usar setTimeout junto com setInterval para exibir a contagem após um atraso inicial.
+setTimeout(() => {
+    print('Iniciando contagem combinando setTimeout e setInterval com atraso de 5 segundos...');
+    let count = 5; // inicializa o contador
+    const countInterval = setInterval(() => { // inicia o intervalo
+        print(`Contagem regressiva: ${count}`);
+        count--; // decrementa o contador
+        if (count <= 0) { // quando o contador chegar a 0
+            clearInterval(countInterval); // para o intervalo
+            print('Contagem regressiva encerrada.');
+        }
+    }, 1000); // Executa a cada 1 segundo
+}, 5000); // Atraso inicial de 5 segundos
+
+// Guia de bolso:
+// setTimeout: Executa uma função uma única vez após um atraso especificado.
+// setInterval: Executa uma função repetidamente em intervalos especificados até que seja parado com clearInterval().
+// clearInterval: Usado para parar a execução repetida iniciada por setInterval.
+
+// ------------------------------------------------------------------------------------------
+
+// Consulte a documentação oficial do MDN para mais detalhes sobre essas funções globais:
+// setTimeout: https://developer.mozilla.org/pt-BR/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
+// setInterval: https://developer.mozilla.org/pt-BR/docs/Web/API/WindowOrWorkerGlobalScope/setInterval
+// clearInterval: https://developer.mozilla.org/pt-BR/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval
+// Essas funções são amplamente utilizadas para controlar o tempo de execução de código em JavaScript, especialmente em aplicações web.
+// Guia de bolso:
+// Funções globais: Funções disponíveis em todo o ambiente JavaScript sem necessidade de importação.
+// Exemplos: setTimeout(), setInterval(), parseInt(), parseFloat(), isNaN(), encodeURI(), decodeURI().
+// Uso: Facilita tarefas comuns como temporização, análise de strings e manipulação de URLs.
+// Referência: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects
