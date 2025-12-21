@@ -1,7 +1,5 @@
-// funções base
-function print(text) {
-    console.log(text);
-};
+// importando a função print do arquivo 01_fucoes.js
+const { print } = require('./01_fucoes');
 
 // Vamos receber dados do usuário e exibi-los no console
 // vamos importar o módulo 'readline' para facilitar a entrada de dados

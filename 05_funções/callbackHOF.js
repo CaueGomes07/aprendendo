@@ -1,9 +1,13 @@
 // HOF -> Higher Order Function === Função de Ordem Superior que recebe outra função como parâmetro ou retorna uma função como resultado.
 
-function printText(text) {
-    console.log(text);
-};
-printText('Funções são essenciais em JavaScript!');
+// function print(text) {
+//     console.log(text);
+// };
+
+// importando a função print do arquivo 01_fucoes.js
+const { print } = require('./01_fucoes');
+
+print('Funções são essenciais em JavaScript!');
 
 // Exemplo 1: Função que recebe uma função como parâmetro (callback)
 function saudacao(nome) {
@@ -31,10 +35,10 @@ function executarOperacao(a, b, operacao) { // operacao é uma função callback
     return operacao(a, b);
 }
 const resultadoSoma = executarOperacao(7, 3, soma);
-printText(`Resultado da operação de soma: ${resultadoSoma}`);
+print(`Resultado da operação de soma: ${resultadoSoma}`);
 
 const resultadoMultiplicacao = executarOperacao(7, 3, multiplicacao);
-printText(`Resultado da operação de multiplicação: ${resultadoMultiplicacao}`);
+print(`Resultado da operação de multiplicação: ${resultadoMultiplicacao}`);
 
 // Exemplo 2: Função que retorna outra função
 function criarSaudacao(prefixo) {

@@ -1,9 +1,12 @@
 
 // importante: Evite sobrescrever funções globais padrão do JavaScript, como alert(), prompt(), parseInt(), etc., pois isso pode causar comportamentos inesperados no seu código.
 
-function print(text) {
-    console.log(text);
-};
+// function print(text) {
+//     console.log(text);
+// };
+
+// importando a função print do arquivo 01_fucoes.js
+const { print } = require('./01_fucoes');
 
 function printMsg() {
     print('Hell yeah!');
